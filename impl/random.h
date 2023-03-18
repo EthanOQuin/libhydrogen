@@ -7,6 +7,8 @@ static TLS struct {
 
 #if defined(AVR) && !defined(__unix__)
 # include "random/avr.h"
+#elif defined(TIVA_C)
+#include "random/tiva.h"
 #elif (defined(ESP32) || defined(ESP8266)) && !defined(__unix__)
 # include "random/esp32.h"
 #elif defined(PARTICLE) && defined(PLATFORM_ID) && PLATFORM_ID > 2 && !defined(__unix__)
