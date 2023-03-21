@@ -42,7 +42,7 @@ hydro_bin2hex(char *hex, size_t hex_maxlen, const uint8_t *bin, size_t bin_len)
     int          c;
 
     if (bin_len >= SIZE_MAX / 2 || hex_maxlen <= bin_len * 2U) {
-        abort();
+        return NULL;
     }
     while (i < bin_len) {
         c = bin[i] & 0xf;
